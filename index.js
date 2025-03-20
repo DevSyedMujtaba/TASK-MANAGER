@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
-
 const taskRoutes = require('./routes/task');
+
+
+app.use(cors());
 
 // Database connection
 mongoose.connect(process.env.MONGO_URL)
